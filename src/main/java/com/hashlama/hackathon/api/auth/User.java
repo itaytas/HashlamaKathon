@@ -1,4 +1,4 @@
-package com.hashlama.hackathon.api.user;
+package com.hashlama.hackathon.api.auth;
 
 import java.util.Objects;
 
