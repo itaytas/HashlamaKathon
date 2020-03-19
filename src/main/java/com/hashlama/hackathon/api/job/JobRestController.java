@@ -9,13 +9,19 @@ import javax.validation.Valid;
 @RequestMapping("/api/job")
 public class JobRestController {
 
+    /* TODO: return the full object of the Job include job's id
+    *
+    */
     @PostMapping("/offer")
-    public ResponseEntity<?> offerJob(@Valid @RequestBody OfferedJob offeredJob){
+    public ResponseEntity<?> offerJob(@Valid @RequestBody JobOfferRequest jobOfferRequest){
         return null;
     }
-    
-    @GetMapping("/all/{city}")
-    public ResponseEntity<?> getAllJobsNearby(@PathVariable String city){
+
+    /* TODO: return all offered jobs based on the location retrieved from the path variable "id"
+     *  (id of the looking for a job user)
+     */
+    @GetMapping("/all/{id}")
+    public ResponseEntity<?> getAllJobsNearby(@PathVariable String id){
         return null;
     }
 
