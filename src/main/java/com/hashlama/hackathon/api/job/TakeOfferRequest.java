@@ -4,20 +4,20 @@ import java.util.Objects;
 
 public class TakeOfferRequest {
 
-    private String InterestedInJobId;
+    private String interestedInJobId;
     private String offeredJobId;
 
     public TakeOfferRequest(String interestedInJobId, String offeredJobId) {
-        InterestedInJobId = interestedInJobId;
+        interestedInJobId = interestedInJobId;
         this.offeredJobId = offeredJobId;
     }
 
     public String getInterestedInJobId() {
-        return InterestedInJobId;
+        return this.interestedInJobId;
     }
 
     public void setInterestedInJobId(String interestedInJobId) {
-        InterestedInJobId = interestedInJobId;
+        this.interestedInJobId = interestedInJobId;
     }
 
     public String getOfferedJobId() {
@@ -33,19 +33,19 @@ public class TakeOfferRequest {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TakeOfferRequest that = (TakeOfferRequest) o;
-        return Objects.equals(InterestedInJobId, that.InterestedInJobId) &&
+        return Objects.equals(interestedInJobId, that.interestedInJobId) &&
                 Objects.equals(offeredJobId, that.offeredJobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(InterestedInJobId, offeredJobId);
+        return Objects.hash(interestedInJobId, offeredJobId);
     }
 
     @Override
     public String toString() {
         return "TakeOfferRequest{" +
-                "InterestedInJobId='" + InterestedInJobId + '\'' +
+                "InterestedInJobId='" + interestedInJobId + '\'' +
                 ", offeredJobId='" + offeredJobId + '\'' +
                 '}';
     }

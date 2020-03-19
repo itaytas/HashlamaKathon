@@ -10,5 +10,7 @@ public interface JobService {
 
     public ResponseEntity<?> getAllJobsByWantedJobUserId(String id);
 
+    public ResponseEntity<?> takeJob(String offeredJobId, String interestedInJobId);
+
     public void cleanup();
 }

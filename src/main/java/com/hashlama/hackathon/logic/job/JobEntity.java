@@ -7,7 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.Objects;
 
 @Entity
 @Document(collection = "Jobs")
@@ -19,13 +21,15 @@ public class JobEntity {
     private String details;
     private Integer price;
     private String userPhoneNumber;
+    private Boolean available;
 
-    public JobEntity(String userId, String city, String details, Integer price, String userPhoneNumber) {
+    public JobEntity(String userId, String city, String details, Integer price, String userPhoneNumber, Boolean available) {
         this.userId = userId;
         this.city = city;
         this.details = details;
         this.price = price;
         this.userPhoneNumber = userPhoneNumber;
+        this.available = available;
     }
 
     @Id
@@ -85,5 +89,45 @@ public class JobEntity {
 
     public void setUserPhoneNumber(String userPhoneNumber) {
         this.userPhoneNumber = userPhoneNumber;
+    }
+    @NotEmpty
+    public Boolean getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(Boolean available) {
+        this.available = available;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        JobEntity jobEntity = (JobEntity) o;
+        return Objects.equals(id, jobEntity.id) &&
+                Objects.equals(userId, jobEntity.userId) &&
+                Objects.equals(city, jobEntity.city) &&
+                Objects.equals(details, jobEntity.details) &&
+                Objects.equals(price, jobEntity.price) &&
+                Objects.equals(userPhoneNumber, jobEntity.userPhoneNumber) &&
+                Objects.equals(available, jobEntity.available);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, userId, city, details, price, userPhoneNumber, available);
+    }
+
+    @Override
+    public String toString() {
+        return "JobEntity{" +
+                "id='" + id + '\'' +
+                ", userId='" + userId + '\'' +
+                ", city='" + city + '\'' +
+                ", details='" + details + '\'' +
+                ", price=" + price +
+                ", userPhoneNumber='" + userPhoneNumber + '\'' +
+                ", available=" + available +
+                '}';
     }
 }

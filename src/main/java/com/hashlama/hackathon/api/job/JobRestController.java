@@ -42,8 +42,8 @@ public class JobRestController {
         return null;
     }
 
-    @PostMapping("/provider")
+    @PostMapping("/take")
     public ResponseEntity<?> takeJob(@Valid @RequestBody TakeOfferRequest takeOfferRequest){
-        return null;
+        return this.jobService.takeJob(takeOfferRequest.getOfferedJobId(), takeOfferRequest.getInterestedInJobId());
     }
 }
