@@ -29,17 +29,17 @@ public class JobRestController {
     /* TODO: return all offered jobs based on the location retrieved from the path variable "id"
      *  (id of the looking for a job user)
      */
-    @GetMapping("/all/{id}")
+    @GetMapping("/all/id/{id}")
     public ResponseEntity<?> getAllJobsNearbyByUserId(@PathVariable String id){
-        return null;
+        return this.jobService.getAllJobsByWantedJobUserId(id);
     }
 
     /* TODO: return all offered jobs based on the location retrieved from the path variable "city"
      *  (id of the looking for a job user)
      */
-    @GetMapping("/all/{city}")
+    @GetMapping("/all/city/{city}")
     public ResponseEntity<?> getAllJobsNearbyByLocation(@PathVariable String city){
-        return null;
+        return this.jobService.getAllJobsByCity(city);
     }
 
     @PostMapping("/take")
