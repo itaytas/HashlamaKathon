@@ -8,7 +8,7 @@ public class TakeOfferRequest {
     private String offeredJobId;
 
     public TakeOfferRequest(String interestedInJobId, String offeredJobId) {
-        interestedInJobId = interestedInJobId;
+        this.interestedInJobId = interestedInJobId;
         this.offeredJobId = offeredJobId;
     }
 
@@ -21,7 +21,7 @@ public class TakeOfferRequest {
     }
 
     public String getOfferedJobId() {
-        return offeredJobId;
+        return this.offeredJobId;
     }
 
     public void setOfferedJobId(String offeredJobId) {
